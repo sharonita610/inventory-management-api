@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: inventory-management-api
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/inventory}
+    username: ${DB_USERNAME:inventory}
+    password: ${DB_PASSWORD:inventory}
+    hikari:
+      connection-init-sql: SET lock_timeout = '3s'
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  jackson:
+    deserialization:
+      accept-float-as-int: false
